@@ -2,119 +2,124 @@ body {
   font-family: Georgia, Garamond, 'Bitstream Vera Serif', 'Luxi Serif', serif;
   font-size: 0.75em;
   color: black;
-  background-color: rgb(255,234,234);
+  background-color: rgb(255, 234, 234);
 }
+
 #caixaPrincipal {
   margin-left: auto;
   margin-right: auto;
   width: 640px;
   color: inherit;
-  background-color: rgb(255,153,153);
+  background-color: rgb(255, 153, 153);
 }
-#topoTextoImagem {
-  padding: 2em 0;
-}
+
 #topoTexto {
+  padding: 1em 0;
   font-weight: bold;
   letter-spacing: 0.5em;
   text-align: center;
   font-size: xx-large;
-  color: rgb(255,204,204);
+  color: rgb(255, 204, 204);
   background-color: inherit;
 }
+
 #navegacao {
   font-weight: bold;
   margin: 0;
   padding: 0;
 }
+
 #navegacao li {
   float: left;
   width: 20%;
   text-align: center;
   list-style-type: none;
+  color: white;
+  background-color: rgb(255, 102, 102);
 }
-#navegacao li :link, #navegacao li :visited {
+
+#navegacao li :link,
+#navegacao li :visited {
   color: white;
   background-color: inherit;
   text-decoration: none;
 }
+
 #navegacao li :hover {
   color: black;
   background-color: inherit;
 }
+
 #textoInformativo {
   text-align: center;
 }
-#barra, #navegacao li {
-  color: white;
-  background-color: rgb(255,102,102);
-}
+
 #subCaixaPrincipal {
   color: inherit;
-  background-color: rgb(255,204,204);
+  background-color: rgb(255, 204, 204);
   padding: 1em;
 }
+
 p {
   text-align: justify;
 }
+
 h1 {
   margin: 0 0 0.5em 0;
   font-size: 2em;
 }
+
 h2 {
   font-size: 1.5em;
 }
+
 h3 {
   font-size: 1.2em;
 }
-h2, h3 {
+
+h2,
+h3 {
   margin: 0;
 }
-h2 + h3 {
+
+h2+h3 {
   margin-top: 1em;
 }
-:link, :visited, h1 {
+
+:link,
+:visited,
+h1 {
   color: #993333;
   background-color: inherit;
 }
-#botoes {
+
+footer {
   margin: 0;
   padding: 0.5em 0;
   text-align: center;
 }
-#botoes li {
-  display: inline;
-}
-#botoes li :link, #botoes li :visited {
-  color: black;
-  background-color: inherit;
-}
-#botoes li :hover {
-  font-weight: bold;
-}
-#botoes li:before {
-  content: " | ";
-}
-#botoes li:first-child:before {
-  content: " ";
-}
+
 .disco {
   width: 150px;
   height: 150px;
   float: left;
 }
+
 .album {
   float: right;
   width: 450px;
   padding-left: 1em;
 }
+
 hr {
   clear: both;
 }
+
 .tipo1 {
   padding: 0 1em 1em 0;
   float: left;
 }
+
 .tipo2 {
   padding: 0 0 1em 1em;
   float: right;
