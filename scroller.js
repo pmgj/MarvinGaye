@@ -60,11 +60,9 @@ function move4(whichdiv) {
   } else {
     tdiv2.style.top = scrollerheight;
     tdiv2.innerHTML = messages[i];
-    if (i == messages.length - 1) i = 0;
-    else i++;
+    i = (i == messages.length - 1) ? 0 : i + 1;
   }
 }
-
 function startscroll() {
   first2_obj = document.getElementById("first");
   second2_obj = document.getElementById("second");
@@ -72,10 +70,9 @@ function startscroll() {
   second2_obj.style.top = scrollerheight;
   second2_obj.style.visibility = 'visible';
 }
-
 function mudarPosicaoScroll() {
   let figura = gerarEnderecoFigura("entrada", 5);
-  let doc = document.getElementById("subCaixaPrincipal");
+  let doc = document.querySelector("main");
   doc.style.backgroundImage = `url(${figura.endereco})`;
   doc = document.getElementById("scroller").style;
   switch (figura.numeroFoto) {
@@ -95,7 +92,6 @@ function mudarPosicaoScroll() {
       break;
   }
 }
-
 function gerarScroll() {
   let string = `<div id="innerScroll" style="height: ${scrollerheight}">` +
     `<div id="first" style="position: absolute; top: 1px;">${messages[0]}</div>` +
@@ -105,7 +101,6 @@ function gerarScroll() {
   scroll.innerHTML = string;
   mudarPosicaoScroll();
 }
-
 window.addEventListener("load", () => {
   gerarScroll();
   startscroll();

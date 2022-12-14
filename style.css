@@ -54,7 +54,7 @@ body {
   text-align: center;
 }
 
-#subCaixaPrincipal {
+main {
   color: inherit;
   background-color: rgb(255, 204, 204);
   padding: 1em;

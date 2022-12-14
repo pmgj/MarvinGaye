@@ -15,7 +15,7 @@ function textoInformativo(posicao) {
 }
 function gerarTopo() {
   let pos = posicao();
-  let doc = '<header>' +
+  let doc =
     '<div id="topoTexto">MARVIN GAYE</div>' +
     '<ul id="navegacao">' +
     '<li><a href="biografia.html">Biografia</a></li>' +
@@ -24,19 +24,22 @@ function gerarTopo() {
     '<li><a href="links.html">Links</a></li>' +
     '<li><a href="index.html">Principal</a></li>' +
     '</ul>' +
-    `<div id="textoInformativo">${textoInformativo(pos)}</div>` +
-    '</header>';
+    `<div id="textoInformativo">${textoInformativo(pos)}</div>`;
+  let header = document.createElement("header");
+  header.innerHTML = doc;
   let body = document.querySelector("#caixaPrincipal");
-  body.innerHTML = doc + body.innerHTML;
+  let main = document.querySelector("main");
+  body.insertBefore(header, main);
   let opcoes = document.querySelector("#navegacao");
   let lis = opcoes.querySelectorAll("li");
   let li = lis[pos];
   li.style.backgroundColor = "rgb(255,153,153)";
 }
 function gerarRodape() {
-  let doc = '<footer><a href="mailto:paulomgj@gmail.com">paulomgj@gmail.com</a></footer>';
+  let footer = document.createElement("footer");
+  footer.innerHTML = '<a href="mailto:paulomgj@gmail.com">paulomgj@gmail.com</a>';
   let body = document.querySelector("#caixaPrincipal");
-  body.innerHTML += doc;
+  body.appendChild(footer);
 }
 function funcoes() {
   gerarTopo();
