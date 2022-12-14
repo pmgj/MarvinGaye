@@ -1,8 +1,8 @@
 function posicao() {
-  var title = document.getElementsByTagName("title")[0];
-  var value = (!title.firstChild && title.innerHTML) ? title.innerHTML : title.firstChild.nodeValue;
-  var barra = ['Biografia', 'Discografia', 'Letras', 'Links', 'Principal'];
-  var i;
+  let title = document.getElementsByTagName("title")[0];
+  let value = (!title.firstChild && title.innerHTML) ? title.innerHTML : title.firstChild.nodeValue;
+  let barra = ['Biografia', 'Discografia', 'Letras', 'Links', 'Principal'];
+  let i;
   for (i = 0; i < barra.length; i++) {
     if (value.indexOf(barra[i]) != -1) { break; }
   }
@@ -10,30 +10,13 @@ function posicao() {
   return i;
 }
 function textoInformativo(posicao) {
-  var texto = '&nbsp;';
-  switch (posicao) {
-    case 0:
-      texto = 'Biografia de Marvin Gaye';
-      break;
-    case 1:
-      texto = 'Singles e Álbuns de Marvin Gaye';
-      break;
-    case 2:
-      texto = 'Letras das Músicas de Marvin Gaye';
-      break;
-    case 3:
-      texto = 'Links para outros sítios de Marvin Gaye';
-      break;
-    case 4:
-      texto = 'Sítio sobre o cantor de soul Marvin Gaye';
-      break;
-  }
-  return texto;
+  let infos = ['Biografia de Marvin Gaye', 'Singles e Álbuns de Marvin Gaye', 'Letras das Músicas de Marvin Gaye', 'Links para outros sítios de Marvin Gaye', 'Sítio sobre o cantor de soul Marvin Gaye'];
+  return infos[posicao];
 }
 function gerarTopo() {
-  var pos = posicao();
+  let pos = posicao();
 
-  var doc = '' +
+  let doc = '' +
     '<div id="topo">' +
     '<div id="topoTextoImagem">' +
     '<div id="topoTexto">' +
@@ -47,24 +30,24 @@ function gerarTopo() {
     '<li><a href="links.html">Links</a></li>' +
     '<li><a href="index.html">Principal</a></li>' +
     '</ul>' +
-    '<div id="textoInformativo">' + textoInformativo(pos) + '</div>' +
+    `<div id="textoInformativo">${textoInformativo(pos)}</div>` +
     '</div>';
-  var body = document.getElementById("caixaPrincipal");
+  let body = document.getElementById("caixaPrincipal");
   body.innerHTML = doc + body.innerHTML;
 
-  var opcoes = document.getElementById("navegacao");
+  let opcoes = document.getElementById("navegacao");
   if (opcoes.getElementsByTagName) {
-    var lis = opcoes.getElementsByTagName("li");
-    var li = lis[pos];
+    let lis = opcoes.getElementsByTagName("li");
+    let li = lis[pos];
     li.style.backgroundColor = "rgb(255,153,153)";
   }
 }
 function gerarRodape() {
-  var doc = '<div id="barra"> </div>' +
+  let doc = '<div id="barra"> </div>' +
     '<ul id="botoes">' +
     '<li><a href="mailto:paulomgj@gmail.com">paulomgj@gmail.com</a> </li>' +
     '</ul>';
-  var body = document.getElementById("caixaPrincipal");
+  let body = document.getElementById("caixaPrincipal");
   body.innerHTML += doc;
 }
 function funcoes() {
