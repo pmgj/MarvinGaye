@@ -15,7 +15,7 @@ function gerarEnderecoFigura(path, quantidadeFiguras) {
 }
 
 //configure the below five variables to change the style of the scroller
-let scrollerheight = "120px";
+let scrollerheight = "140px";
 
 //configure the below variable to change the contents of the scroller
 let messages = new Array();

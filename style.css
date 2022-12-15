@@ -1,6 +1,5 @@
 body {
   font-family: Georgia, Garamond, 'Bitstream Vera Serif', 'Luxi Serif', serif;
-  font-size: 0.75em;
   color: black;
   background-color: rgb(255, 234, 234);
 }
@@ -14,7 +13,7 @@ body {
 }
 
 #topoTexto {
-  padding: 1em 0;
+  padding: 2em 0;
   font-weight: bold;
   letter-spacing: 0.5em;
   text-align: center;
@@ -107,7 +106,7 @@ footer {
 
 .album {
   float: right;
-  width: 450px;
+  width: 440px;
   padding-left: 1em;
 }
 
