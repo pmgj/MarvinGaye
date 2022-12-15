@@ -1,1 +1,0 @@
-Tirar do JavaScript a inclusao da cor da opção do menu selecionada, criando uma classe e setando ela.

@@ -40,13 +40,16 @@ body {
 #navegacao li :link,
 #navegacao li :visited {
   color: white;
-  background-color: inherit;
   text-decoration: none;
 }
 
 #navegacao li :hover {
   color: black;
   background-color: inherit;
+}
+
+#navegacao li.selected {
+  background-color: rgb(255, 153, 153);
 }
 
 #textoInformativo {
