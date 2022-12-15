@@ -1,30 +1,19 @@
+let headerData = [{ label: "Biografia", text: "Biografia de Marvin Gaye", link: "biografia.html" }, { label: "Discografia", text: "Singles e Álbuns de Marvin Gaye", link: "discos.html" }, { label: "Letras", text: "Letras das Músicas de Marvin Gaye", link: "letras.html" }, { label: "Links", text: "Links para outros sítios de Marvin Gaye", link: "links.html" }, { label: "Principal", text: "Sítio sobre o cantor de soul Marvin Gaye", link: "index.html" }];
 function posicao() {
   let title = document.querySelector("title");
-  let value = (!title.firstChild && title.innerHTML) ? title.innerHTML : title.firstChild.nodeValue;
-  let barra = ['Biografia', 'Discografia', 'Letras', 'Links', 'Principal'];
-  for (let i = 0; i < barra.length; i++) {
-    if (value.indexOf(barra[i]) != -1) {
+  let value = title.textContent;
+  for (let i = 0; i < headerData.length; i++) {
+    if (value.indexOf(headerData[i].label) != -1) {
       return i;
     }
   }
-  return barra.length - 1;
-}
-function textoInformativo(posicao) {
-  let infos = ['Biografia de Marvin Gaye', 'Singles e Álbuns de Marvin Gaye', 'Letras das Músicas de Marvin Gaye', 'Links para outros sítios de Marvin Gaye', 'Sítio sobre o cantor de soul Marvin Gaye'];
-  return infos[posicao];
+  return headerData.length - 1;
 }
 function gerarTopo() {
   let pos = posicao();
-  let doc =
-    '<div id="topoTexto">MARVIN GAYE</div>' +
-    '<ul id="navegacao">' +
-    '<li><a href="biografia.html">Biografia</a></li>' +
-    '<li><a href="discos.html">Discografia</a></li>' +
-    '<li><a href="letras.html">Letras</a></li>' +
-    '<li><a href="links.html">Links</a></li>' +
-    '<li><a href="index.html">Principal</a></li>' +
-    '</ul>' +
-    `<div id="textoInformativo">${textoInformativo(pos)}</div>`;
+  let doc = '<div id="topoTexto">MARVIN GAYE</div><nav><ul id="navegacao">';
+  headerData.forEach(d => doc += `<li><a href="${d.link}">${d.label}</a></li>`);
+  doc += `</ul></nav><div id="textoInformativo">${headerData[pos].text}</div>`;
   let header = document.createElement("header");
   header.innerHTML = doc;
   let body = document.querySelector("#caixaPrincipal");
