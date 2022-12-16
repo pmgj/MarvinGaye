@@ -14,7 +14,6 @@ main {
 #scroller h2 {
   font-size: 1.4em;
   color: #993333;
-  background-color: inherit;
 }
 
 #scroller p {
@@ -30,5 +29,4 @@ main {
 
 #first, #second {
   position: absolute;
-  /* top: 1px; */
 }

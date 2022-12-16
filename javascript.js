@@ -11,14 +11,20 @@ function posicao() {
 }
 function gerarTopo() {
   let pos = posicao();
-  let doc = '<div id="topoTexto">MARVIN GAYE</div><nav><ul id="navegacao">';
-  headerData.forEach((d, i) => doc += `<li${i === pos ? ' class="selected"' : ''}><a href="${d.link}">${d.label}</a></li>`);
-  doc += `</ul></nav><div id="textoInformativo">${headerData[pos].text}</div>`;
-  let header = document.createElement("header");
-  header.innerHTML = doc;
   let body = document.querySelector("#caixaPrincipal");
   let main = document.querySelector("main");
+  let header = document.createElement("header");
   body.insertBefore(header, main);
+  header.textContent = 'MARVIN GAYE';
+  let nav = document.createElement("nav");
+  let doc = "<ul>";
+  headerData.forEach((d, i) => doc += `<li${i === pos ? ' class="selected"' : ''}><a href="${d.link}">${d.label}</a></li>`);
+  doc += "</ul>";
+  nav.innerHTML = doc;
+  body.insertBefore(nav, main);
+  let div = document.createElement("div");
+  div.textContent = headerData[pos].text;
+  body.insertBefore(div, main);
 }
 function gerarRodape() {
   let footer = document.createElement("footer");

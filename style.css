@@ -8,11 +8,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 640px;
-  color: inherit;
   background-color: rgb(255, 153, 153);
 }
 
-#topoTexto {
+header {
   padding: 1em 0;
   font-weight: bold;
   letter-spacing: 0.5em;
@@ -21,13 +20,13 @@ body {
   color: rgb(255, 204, 204);
 }
 
-#navegacao {
+nav ul {
   font-weight: bold;
   margin: 0;
   padding: 0;
 }
 
-#navegacao li {
+nav ul li {
   float: left;
   width: 20%;
   text-align: center;
@@ -36,27 +35,25 @@ body {
   background-color: rgb(255, 102, 102);
 }
 
-#navegacao li :link,
-#navegacao li :visited {
+nav ul li :link,
+nav ul li :visited {
   color: white;
   text-decoration: none;
 }
 
-#navegacao li :hover {
+nav ul li :hover {
   color: black;
-  background-color: inherit;
 }
 
-#navegacao li.selected {
+nav ul li.selected {
   background-color: rgb(255, 153, 153);
 }
 
-#textoInformativo {
+nav + div {
   text-align: center;
 }
 
 main {
-  color: inherit;
   background-color: rgb(255, 204, 204);
   padding: 1em;
 }
@@ -91,7 +88,6 @@ h2+h3 {
 :visited,
 h1 {
   color: #993333;
-  background-color: inherit;
 }
 
 footer {
