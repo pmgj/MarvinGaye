@@ -11,7 +11,7 @@ function posicao() {
 }
 function gerarTopo() {
   let pos = posicao();
-  let body = document.querySelector("#caixaPrincipal");
+  let body = document.querySelector("body");
   let main = document.querySelector("main");
   let header = document.createElement("header");
   body.insertBefore(header, main);
@@ -29,7 +29,7 @@ function gerarTopo() {
 function gerarRodape() {
   let footer = document.createElement("footer");
   footer.innerHTML = '<a href="mailto:paulomgj@gmail.com">paulomgj@gmail.com</a>';
-  let body = document.querySelector("#caixaPrincipal");
+  let body = document.querySelector("body");
   body.appendChild(footer);
 }
 function funcoes() {
